@@ -7,7 +7,7 @@ console.log(`Hello, ${playerName}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let counter = 0;
-while (counter < 3) {
+while (counter < 3 && counter !== -1) {
     const questionNum = getRand();
     console.log(`Question: ${questionNum}`);
 
@@ -18,10 +18,12 @@ while (counter < 3) {
         counter += 1;
         console.log('Correct!');
     } else {
-        counter = 0;
+        counter = -1;
         console.log(`'${userAnsw}' is wrong answer ;(. Correct answer was '${corrAnsw}'`);
         console.log(`Let's try again, ${playerName}!`);
     }
 }
 
-console.log(`Congratulations, ${playerName}!`);
+if (counter > 0) {
+    console.log(`Congratulations, ${playerName}!`);
+}
