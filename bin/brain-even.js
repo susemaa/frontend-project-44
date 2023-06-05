@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { getName } from '../src/cli.js'
-import { getAnsw, getRand } from './games-functions.js';
+import { getAnsw, getRand } from '../src/games-functions.js';
 
 const playerName = getName();
 console.log(`Hello, ${playerName}!`);
