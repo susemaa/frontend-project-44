@@ -19,4 +19,6 @@ while (counter < 3 && counter !== -1) {
 
 if (counter > 0) { 
     console.log(`Congratulations, ${playerName}!`);
+} else {
+    console.log(`Let's try again, ${playerName}!`);
 }

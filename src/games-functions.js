@@ -44,7 +44,6 @@ const checkAnswer = (counter, playerAnsw, corrAnsw) => {
     } else {
         counter = -1;
         console.log(`'${playerAnsw}' is wrong answer ;(. Correct answer was '${corrAnsw}'`);
-        console.log(`Let's try again, ${playerName}!`);
     }
 
     return counter;
