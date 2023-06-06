@@ -1,7 +1,7 @@
 import { getAnsw, checkAnswer } from "../games-functions.js";
 import { getRand, isPrime } from "../math.js";
 
-const playEven = () => {
+const playPrime = () => {
     let counter = 0;
     console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
@@ -18,4 +18,4 @@ const playEven = () => {
     return counter;
 };
 
-export { playEven };
+export { playPrime };
