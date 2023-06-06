@@ -49,4 +49,13 @@ const checkAnswer = (counter, playerAnsw, corrAnsw) => {
     return counter;
 }
 
-export { getAnsw, getRand, getExpression, checkAnswer };
+const sayBye = (counter, playerName) => {
+
+    if (counter > 0) { 
+        console.log(`Congratulations, ${playerName}!`);
+    } else {
+        console.log(`Let's try again, ${playerName}!`);
+    }
+}
+
+export { getAnsw, getRand, getExpression, checkAnswer, sayBye };
