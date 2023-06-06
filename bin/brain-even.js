@@ -3,7 +3,6 @@ import { getName } from '../src/cli.js'
 import { getAnsw, getRand } from '../src/games-functions.js';
 
 const playerName = getName();
-console.log(`Hello, ${playerName}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
