@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRand, getOperation, getGcd } from './math.js'
+import { getRand, getOperation, getGcd, createProgression } from './math.js'
 
 const getAnsw = () => { 
     const answ = readlineSync.question('Your answer: ');
@@ -51,7 +51,6 @@ const startGame = (gameName) => {
             }
 
             break;
-
         case 'calc':
             console.log('What is the result of the expression?');
 
@@ -66,7 +65,6 @@ const startGame = (gameName) => {
             }
 
             break;
-
         case 'gcd':
             console.log('Find the greatest common divisor of given numbers.');
 
@@ -81,7 +79,20 @@ const startGame = (gameName) => {
             }
 
             break;
+        case 'progression':
+            console.log('What number is missing in the progression?');
+
+            while (counter < 3 && counter !== -1) {
+                const [progression, corrAnsw] = createProgression();
+                process.stdout.write("Question: ");
+                console.log(...progression)
         
+                const playerAnsw = getAnsw();
+        
+                counter = checkAnswer(counter, playerAnsw, corrAnsw);
+            }
+        
+            break;
         default: 
             console.log('Wrong gameName');
             counter = -1;

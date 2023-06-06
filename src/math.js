@@ -1,6 +1,6 @@
 const getRand = (maxValue = 100) => {
     return Math.floor(Math.random() * maxValue); // < maxValue
-}
+};
 
 const getOperation = () => {
     const operationNum = getRand(3);
@@ -18,6 +18,22 @@ const getGcd = (x, y) => {
 	if (y > x) return getGcd(y, x);
 	if (!y) return x;
 	return getGcd(y, x % y);
-}
+};
 
-export { getRand, getOperation, getGcd };
+const createProgression = () => {
+    const progression = [];
+    progression[0] = String(getRand(10));
+    const progressionStep = getRand(10);
+
+    for (let i = 1; i < 10; i++) {
+        progression.push(String(Number(progression[i - 1]) + progressionStep))
+    }
+
+    const missedId = getRand(10);
+    const missedValue = progression[missedId];
+    progression[missedId] = '..';
+
+    return [progression, missedValue];
+};
+
+export { getRand, getOperation, getGcd, createProgression };
