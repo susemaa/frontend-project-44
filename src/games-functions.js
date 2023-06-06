@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import { playCalc } from './games/calc.js';
 import { playEven } from './games/even.js';
 import { playGcd } from './games/gcd.js';
-import { playPrime } from './games/prime.js';
+import { playPrime } from './games/prime_1.js';
 import { playProgression } from './games/progression.js';
 
 const getAnsw = () => { 
