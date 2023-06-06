@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRand, getOperation, getGcd, createProgression } from './math.js'
+import { getRand, getOperation, getGcd, createProgression, isPrime } from './math.js'
 
 const getAnsw = () => { 
     const answ = readlineSync.question('Your answer: ');
@@ -92,6 +92,20 @@ const startGame = (gameName) => {
                 counter = checkAnswer(counter, playerAnsw, corrAnsw);
             }
         
+            break;
+        case 'prime': 
+            while (counter < 3 && counter !== -1) {
+                console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+
+                const questionNum = getRand(25);
+                console.log(`Question: ${questionNum}`);
+        
+                const corrAnsw = isPrime(questionNum) ? 'yes': 'no';
+                const playerAnsw = getAnsw();
+        
+                counter = checkAnswer(counter, playerAnsw, corrAnsw);
+            }
+
             break;
         default: 
             console.log('Wrong gameName');

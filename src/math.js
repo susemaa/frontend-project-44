@@ -36,4 +36,12 @@ const createProgression = () => {
     return [progression, missedValue];
 };
 
-export { getRand, getOperation, getGcd, createProgression };
+const isPrime = (value) => {
+    for(let i = 2, s = Math.sqrt(value); i <= s; i++) {
+        if(value % i === 0) return false;
+    }
+    
+    return value > 1;
+}
+
+export { getRand, getOperation, getGcd, createProgression, isPrime };
