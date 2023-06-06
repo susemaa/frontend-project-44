@@ -14,6 +14,8 @@ const playEven = () => {
             
             counter = checkAnswer(counter, playerAnsw, corrAnsw);
         }
+
+    return counter;
 };
 
 export { playEven };
