@@ -2,8 +2,7 @@ import readlineSync from 'readline-sync';
 import { playCalc } from './games/calc.js';
 import { playEven } from './games/even.js';
 import { playGcd } from './games/gcd.js';
-//import { playPrime } from './games/prime_1.js';
-import { getRand, isPrime } from './math.js';
+import { playPrime } from './games/prime.js';
 import { playProgression } from './games/progression.js';
 
 const getAnsw = () => { 
@@ -45,17 +44,7 @@ const startGame = (gameName) => {
         
             break;
         case 'prime': 
-            console.log('Answer "yes" if the number is prime, otherwise answer "no".');
-
-            while (counter < 3 && counter !== -1) {
-                const questionNum = getRand(25);
-                console.log(`Question: ${questionNum}`);
-                
-                const corrAnsw = isPrime(questionNum) ? 'yes': 'no';
-                const playerAnsw = getAnsw();
-                
-                counter = checkAnswer(counter, playerAnsw, corrAnsw);
-            }
+            counter = playPrime();
 
             break;
         default: 
