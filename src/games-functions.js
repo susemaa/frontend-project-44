@@ -50,13 +50,4 @@ const checkAnswer = (counter, playerAnsw, corrAnsw) => {
     return counter;
 }
 
-const isWin = (counter, playerName) => {
-    if (counter > 0) {
-        console.log(`Congratulations, ${playerName}!`);
-        return true;
-    }
-
-    return false;
-}
-
-export { getAnsw, getRand, getExpression, checkAnswer, isWin };
+export { getAnsw, getRand, getExpression, checkAnswer };
