@@ -1,26 +1,15 @@
 import readlineSync from 'readline-sync';
-import { getRand, getOperation, getGcd, createProgression, isPrime } from './math.js'
+import { playCalc } from './games/calc.js';
+import { playEven } from './games/even.js';
+import { playGcd } from './games/gcd.js';
+import { playPrime } from './games/prime.js';
+import { playProgression } from './games/progression.js';
 
 const getAnsw = () => { 
     const answ = readlineSync.question('Your answer: ');
 
     return answ;
 }
-
-const getExpression = () => {
-    const [v1, v2] = [getRand(15), getRand(15)];
-    const operation = getOperation();
-    const expressionStr = `${v1} ${operation} ${v2}`;
-
-    switch (operation) {
-        case '+':
-            return [expressionStr, v1 + v2];
-        case '-':
-            return [expressionStr, v1 - v2];
-        case '*':
-            return [expressionStr, v1 * v2];
-    }
-};
 
 const checkAnswer = (counter, playerAnsw, corrAnsw) => {
     if (playerAnsw === corrAnsw) {
@@ -36,75 +25,26 @@ const checkAnswer = (counter, playerAnsw, corrAnsw) => {
 
 const startGame = (gameName) => {
     let counter = 0;
+
     switch (gameName) {
         case 'even':
-            while (counter < 3 && counter !== -1) {
-                console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-                const questionNum = getRand();
-                console.log(`Question: ${questionNum}`);
-            
-                const corrAnsw = questionNum % 2 === 0 ? 'yes': 'no';
-                const playerAnsw = getAnsw();
-            
-                counter = checkAnswer(counter, playerAnsw, corrAnsw);
-            }
+            counter = playEven();
 
             break;
         case 'calc':
-            console.log('What is the result of the expression?');
-
-            while (counter < 3 && counter !== -1) {
-                const [questionStr, questionValue] = getExpression();
-                console.log(`Question: ${questionStr}`);
-            
-                const corrAnsw = questionValue;
-                const playerAnsw = Number(getAnsw());
-            
-                counter = checkAnswer(counter, playerAnsw, corrAnsw);
-            }
+            counter = playCalc();
 
             break;
         case 'gcd':
-            console.log('Find the greatest common divisor of given numbers.');
-
-            while (counter < 3 && counter !== -1) {
-                const [qValue1, qValue2] = [getRand(10) + 1, getRand(10) + 1];
-                console.log(`Question: ${qValue1} ${qValue2}`);
-            
-                const corrAnsw = getGcd(qValue1, qValue2);
-                const playerAnsw = Number(getAnsw());
-            
-                counter = checkAnswer(counter, playerAnsw, corrAnsw);
-            }
+            counter = playGcd();
 
             break;
         case 'progression':
-            console.log('What number is missing in the progression?');
-
-            while (counter < 3 && counter !== -1) {
-                const [progression, corrAnsw] = createProgression();
-                process.stdout.write("Question: ");
-                console.log(...progression)
-        
-                const playerAnsw = getAnsw();
-        
-                counter = checkAnswer(counter, playerAnsw, corrAnsw);
-            }
+            counter = playProgression();
         
             break;
         case 'prime': 
-            while (counter < 3 && counter !== -1) {
-                console.log('Answer "yes" if the number is prime, otherwise answer "no".');
-
-                const questionNum = getRand(25);
-                console.log(`Question: ${questionNum}`);
-        
-                const corrAnsw = isPrime(questionNum) ? 'yes': 'no';
-                const playerAnsw = getAnsw();
-        
-                counter = checkAnswer(counter, playerAnsw, corrAnsw);
-            }
+            counter = playPrime();
 
             break;
         default: 
@@ -125,4 +65,4 @@ const sayBye = (counter, playerName) => {
     }
 }
 
-export { getAnsw, getRand, getExpression, checkAnswer, sayBye, startGame };
+export { getAnsw, checkAnswer, sayBye, startGame };
