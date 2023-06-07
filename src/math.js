@@ -6,10 +6,10 @@ const getOperation = () => {
   if (operationNum === 0) {
     return '+';
   }
-  if (operationNum === 0) {
+  if (operationNum === 1) {
     return '-';
   }
-  if (operationNum === 0) {
+  if (operationNum === 2) {
     return '*';
   }
 

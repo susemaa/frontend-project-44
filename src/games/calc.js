@@ -13,7 +13,7 @@ const getExpression = () => {
     case '*':
       return [v1, v2, operation, v1 * v2];
     default:
-      return [0, 0, '', 0];
+      return [0, 0, '+', 0];
   }
 };
 
