@@ -3,7 +3,7 @@ import { getRand, isPrime } from "../math.js";
 
 const playPrime = () => {
     let counter = 0;
-    console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
     while (counter < 3 && counter !== -1) {
         const questionNum = getRand(25);
