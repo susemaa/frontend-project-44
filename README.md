@@ -23,14 +23,14 @@ To open any of games you need to write
 
 In the beggining, every game asks you to write your name. After you do that, the game starts!
 
-Also you can see demonstrantion of any game:
-<table style="width:100%;">
+Also you can see the demonstrantion of any game:
+<table>
   <tr>
-    <td><a href="https://asciinema.org/a/589895">brain-even</a></td>
-    <td><a href="https://asciinema.org/a/589894">brain-calc</a></td>
-    <td><a href="https://asciinema.org/a/589959">brain-gcd</a></td>
-    <td><a href="https://asciinema.org/a/589982">brain-progression</a></td>
-    <td><a href="https://asciinema.org/a/589994">brain-prime</a></td>
-    <td><a href="https://asciinema.org/a/590019">everything</a></td>
+    <td style="width:16%;"><a href="https://asciinema.org/a/589895">brain-even</a></td>
+    <td style="width:16%;"><a href="https://asciinema.org/a/589894">brain-calc</a></td>
+    <td style="width:16%;"><a href="https://asciinema.org/a/589959">brain-gcd</a></td>
+    <td style="width:16%;"><a href="https://asciinema.org/a/589982">brain-progression</a></td>
+    <td style="width:16%;"><a href="https://asciinema.org/a/589994">brain-prime</a></td>
+    <td style="width:20%;"><a href="https://asciinema.org/a/590019">everything</a></td>
   </tr>
 </table>
