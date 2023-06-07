@@ -17,7 +17,11 @@ Brain Games is a collection of five command-line interface (CLI) brain games des
 `make setup`
 
 ## Usage
-To open any of games you need to write `brain-*game_name*` 
+To open any of games you need to write 
+
+`brain-*game_name*` 
+
+In the beggining, every game asks you to write your name. After you do that, the game starts!
 
 Also you can see demonstrantion of any game:
 <table style="width:100%;">
