@@ -1,47 +1,55 @@
-const getRand = (maxValue = 100) => {
-    return Math.floor(Math.random() * maxValue); // < maxValue
-};
+const getRand = (maxValue = 100) => Math.floor(Math.random() * maxValue); // < maxValue
 
 const getOperation = () => {
-    const operationNum = getRand(3);
-    switch (operationNum) {
-        case 0:
-            return '+';
-        case 1:
-            return '-';
-        case 2:
-            return '*';
-    }
+  const operationNum = getRand(3);
+
+  if (operationNum === 0) {
+    return '+';
+  }
+  if (operationNum === 0) {
+    return '-';
+  }
+  if (operationNum === 0) {
+    return '*';
+  }
+
+  return '';
 };
 
 const getGcd = (x, y) => {
-	if (y > x) return getGcd(y, x);
-	if (!y) return x;
-	return getGcd(y, x % y);
+  if (y > x) return getGcd(y, x);
+  if (!y) return x;
+  return getGcd(y, x % y);
 };
 
 const createProgression = () => {
-    const progression = [];
-    progression[0] = String(getRand(10));
-    const progressionStep = getRand(10);
+  const progression = [];
+  progression[0] = String(getRand(10));
+  const progressionStep = getRand(10);
 
-    for (let i = 1; i < 10; i++) {
-        progression.push(String(Number(progression[i - 1]) + progressionStep))
-    }
+  for (let i = 1; i < 10; i += 1) {
+    progression.push(String(Number(progression[i - 1]) + progressionStep));
+  }
 
-    const missedId = getRand(10);
-    const missedValue = progression[missedId];
-    progression[missedId] = '..';
+  const missedId = getRand(10);
+  const missedValue = progression[missedId];
+  progression[missedId] = '..';
 
-    return [progression, missedValue];
+  return [progression, missedValue];
 };
 
 const isPrime = (value) => {
-    for(let i = 2, s = Math.sqrt(value); i <= s; i++) {
-        if(value % i === 0) return false;
-    }
-    
-    return value > 1;
-}
+  for (let i = 2, s = Math.sqrt(value); i <= s; i += 1) {
+    if (value % i === 0) return false;
+  }
 
-export { getRand, getOperation, getGcd, createProgression, isPrime };
+  return value > 1;
+};
+
+export {
+  getRand,
+  getOperation,
+  getGcd,
+  createProgression,
+  isPrime,
+};
