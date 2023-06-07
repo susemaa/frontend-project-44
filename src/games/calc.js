@@ -23,7 +23,7 @@ const playCalc = () => {
 
   while (counter < 3 && counter !== -1) {
     const [v1, v2, operation, questionValue] = getExpression();
-    console.log(`Operation: ${v1} ${operation} ${v2}`);
+    console.log('Question:', v1, operation, v2);
 
     const corrAnsw = questionValue;
     const playerAnsw = Number(getAnsw());

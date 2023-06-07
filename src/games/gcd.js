@@ -7,7 +7,7 @@ const playGcd = () => {
 
   while (counter < 3 && counter !== -1) {
     const [qValue1, qValue2] = [getRand(10) + 1, getRand(10) + 1];
-    console.log(`Question: ${qValue1} ${qValue2}`);
+    console.log('Question:', qValue1, qValue2);
 
     const corrAnsw = getGcd(qValue1, qValue2);
     const playerAnsw = Number(getAnsw());

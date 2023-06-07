@@ -7,7 +7,7 @@ const playPrime = () => {
 
   while (counter < 3 && counter !== -1) {
     const questionNum = getRand(25);
-    console.log(`Question: ${questionNum}`);
+    console.log('Question:', questionNum);
 
     const corrAnsw = isPrime(questionNum) ? 'yes' : 'no';
     const playerAnsw = getAnsw();
