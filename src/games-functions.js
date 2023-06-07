@@ -1,27 +1,8 @@
-import readlineSync from 'readline-sync';
 import { playCalc } from './games/calc.js';
 import { playEven } from './games/even.js';
 import { playGcd } from './games/gcd.js';
 import { playPrime } from './games/prime.js';
 import { playProgression } from './games/progression.js';
-
-const getAnsw = () => { 
-    const answ = readlineSync.question('Your answer: ');
-
-    return answ;
-}
-
-const checkAnswer = (counter, playerAnsw, corrAnsw) => {
-    if (playerAnsw === corrAnsw) {
-        counter += 1;
-        console.log('Correct!');
-    } else {
-        counter = -1;
-        console.log(`'${playerAnsw}' is wrong answer ;(. Correct answer was '${corrAnsw}'`);
-    }
-
-    return counter;
-}
 
 const startGame = (gameName) => {
     let counter = 0;
@@ -65,4 +46,4 @@ const sayBye = (counter, playerName) => {
     }
 }
 
-export { getAnsw, checkAnswer, sayBye, startGame };
+export { startGame, sayBye };

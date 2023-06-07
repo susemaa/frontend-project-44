@@ -1,4 +1,4 @@
-import { getAnsw, checkAnswer } from "../games-functions.js";
+import { getAnsw, checkAnswer } from "./in-games-functions.js";
 import { getRand, isPrime } from "../math.js";
 
 const playPrime = () => {

@@ -1,5 +1,6 @@
+import { getAnsw, checkAnswer } from "./in-games-functions.js";
 import { createProgression } from "../math.js";
-import { getAnsw, checkAnswer } from "../games-functions.js";
+
 
 const playProgression = () => {
     console.log('What number is missing in the progression?');
