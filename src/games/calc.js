@@ -4,17 +4,16 @@ import { getOperation, getRand } from '../math.js';
 const getExpression = () => {
   const [v1, v2] = [getRand(15), getRand(15)];
   const operation = getOperation();
-  const expressionStr = `${v1} ${operation} ${v2}`;
 
   switch (operation) {
     case '+':
-      return [expressionStr, v1 + v2];
+      return [v1, v2, operation, v1 + v2];
     case '-':
-      return [expressionStr, v1 - v2];
+      return [v1, v2, operation, v1 - v2];
     case '*':
-      return [expressionStr, v1 * v2];
+      return [v1, v2, operation, v1 * v2];
     default:
-      return ['', 0];
+      return [0, 0, '', 0];
   }
 };
 
@@ -23,8 +22,8 @@ const playCalc = () => {
   console.log('What is the result of the expression?');
 
   while (counter < 3 && counter !== -1) {
-    const [questionStr, questionValue] = getExpression();
-    console.log(`Question: ${questionStr}`);
+    const [v1, v2, operation, questionValue] = getExpression();
+    console.log(`Operation: ${v1} ${operation} ${v2}`);
 
     const corrAnsw = questionValue;
     const playerAnsw = Number(getAnsw());
