@@ -23,6 +23,12 @@ To open any of games you need to write
 
 In the beggining, every game asks you to write your name. After you do that, the game starts!
 
+## brain-even
+
+The random number (which is up to 100) is outputed. User needs to answer "yes" if the number is even, or "no" if it is odd.
+
+[![Watch the video](https://asciinema.org/a/589895)](https://asciinema.org/a/589895)
+
 Also you can see the demonstrantion of any game:
 <ul>
   <li><a href="https://asciinema.org/a/589895">brain-even</a></li>
