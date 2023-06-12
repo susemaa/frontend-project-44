@@ -1,4 +1,4 @@
-import { getAnsw, checkAnswer } from './in-games-functions.js';
+import playGame from '../index.js';
 import { getOperation, getRand } from '../math.js';
 
 const getExpression = () => {
@@ -17,20 +17,15 @@ const getExpression = () => {
   }
 };
 
-const playCalc = () => {
-  let counter = 0;
-  console.log('What is the result of the expression?');
-
-  while (counter < 3 && counter !== -1) {
+export default () => {
+  const message = 'What is the result of the expression?';
+  const questions = [];
+  const answers = [];
+  for (let i = 0; i < 3; i += 1) {
     const [v1, v2, operation, questionValue] = getExpression();
-    console.log('Question:', v1, operation, v2);
-
-    const corrAnsw = questionValue;
-    const playerAnsw = Number(getAnsw());
-
-    counter = checkAnswer(counter, playerAnsw, corrAnsw);
+    questions[i] = `Question: ${v1} ${operation} ${v2}`;
+    answers[i] = String(questionValue);
   }
-  return counter;
-};
 
-export default playCalc;
+  playGame(message, questions, answers);
+};

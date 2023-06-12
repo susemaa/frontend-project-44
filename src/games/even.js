@@ -1,21 +1,15 @@
-import { getAnsw, checkAnswer } from './in-games-functions.js';
+import playGame from '../index.js';
 import { getRand } from '../math.js';
 
-const playEven = () => {
-  let counter = 0;
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  while (counter < 3 && counter !== -1) {
+export default () => {
+  const message = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const questions = [];
+  const answers = [];
+  for (let i = 0; i < 3; i += 1) {
     const questionNum = getRand();
-    console.log('Question:', questionNum);
-
-    const corrAnsw = questionNum % 2 === 0 ? 'yes' : 'no';
-    const playerAnsw = getAnsw();
-
-    counter = checkAnswer(counter, playerAnsw, corrAnsw);
+    questions[i] = `Question: ${questionNum}`;
+    answers[i] = questionNum % 2 === 0 ? 'yes' : 'no';
   }
 
-  return counter;
+  playGame(message, questions, answers);
 };
-
-export default playEven;

@@ -1,13 +1,13 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/susemaa/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/susemaa/frontend-project-44/actions)",
-  "main": "games-functions.js",
+  "description": "Collection of CLI brain games designed to complete Hexlet Project.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Arseny Radoslavov",
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",

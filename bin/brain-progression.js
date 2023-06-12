@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import getName from '../src/cli.js';
-import { sayBye, startGame } from '../src/games-functions.js';
+import playProgression from '../src/games/progression.js';
 
-const playerName = getName();
-
-const counter = startGame('progression');
-
-sayBye(counter, playerName);
+playProgression();

@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import getName from '../src/cli.js';
-import { startGame, sayBye } from '../src/games-functions.js';
+import playCalc from '../src/games/calc.js';
 
-const playerName = getName();
-
-const counter = startGame('calc');
-
-sayBye(counter, playerName);
+playCalc();

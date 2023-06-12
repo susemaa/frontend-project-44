@@ -1,21 +1,17 @@
-import { getAnsw, checkAnswer } from './in-games-functions.js';
+import playGame from '../index.js';
 import { createProgression } from '../math.js';
 
-const playProgression = () => {
-  console.log('What number is missing in the progression?');
-  let counter = 0;
-
-  while (counter < 3 && counter !== -1) {
+export default () => {
+  const message = 'What number is missing in the progression?';
+  const questions = [];
+  const answers = [];
+  for (let i = 0; i < 3; i += 1) {
     const [progression, corrAnsw] = createProgression();
-    process.stdout.write('Question: ');
-    console.log(...progression);
-
-    const playerAnsw = getAnsw();
-
-    counter = checkAnswer(counter, playerAnsw, corrAnsw);
+    const stringedProgression = progression.join(' ');
+    questions[i] = `Question: ${stringedProgression}`;
+    console.log(questions[i]);
+    answers[i] = corrAnsw;
   }
 
-  return counter;
+  playGame(message, questions, answers);
 };
-
-export default playProgression;

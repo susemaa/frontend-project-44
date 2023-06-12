@@ -1,21 +1,15 @@
-import { getAnsw, checkAnswer } from './in-games-functions.js';
+import playGame from '../index.js';
 import { getRand, isPrime } from '../math.js';
 
-const playPrime = () => {
-  let counter = 0;
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  while (counter < 3 && counter !== -1) {
+export default () => {
+  const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const questions = [];
+  const answers = [];
+  for (let i = 0; i < 3; i += 1) {
     const questionNum = getRand(25);
-    console.log('Question:', questionNum);
-
-    const corrAnsw = isPrime(questionNum) ? 'yes' : 'no';
-    const playerAnsw = getAnsw();
-
-    counter = checkAnswer(counter, playerAnsw, corrAnsw);
+    questions[i] = `Question: ${questionNum}`;
+    answers[i] = isPrime(questionNum) ? 'yes' : 'no';
   }
 
-  return counter;
+  playGame(message, questions, answers);
 };
-
-export default playPrime;
