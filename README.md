@@ -25,16 +25,31 @@ In the beggining, every game asks you to write your name. After you do that, the
 
 ## brain-even
 
-The random number (which is up to 100) is outputed. User needs to answer "yes" if the number is even, or "no" if it is odd.
+The user is shown a random number. The number can be any number up to 100. User needs to answer "yes" if the number is even, or "no" if it is odd.
 
 [![asciicast](https://asciinema.org/a/589895.svg)](https://asciinema.org/a/589895)
 
-Also you can see the demonstrantion of any game:
-<ul>
-  <li><a href="https://asciinema.org/a/589895">brain-even</a></li>
-  <li><a href="https://asciinema.org/a/589894">brain-calc</a></li>
-  <li><a href="https://asciinema.org/a/589959">brain-gcd</a></li>
-  <li><a href="https://asciinema.org/a/589982">brain-progression</a></li>
-  <li><a href="https://asciinema.org/a/589994">brain-prime</a></li>
-  <li><a href="https://asciinema.org/a/590019">everything</a></li>
-</ul>
+## brain-calc
+
+The user is shown a mathematical expression. The expression consist of two numbers and one operation (+/-/*). User needs to calculate the expression and write down the correct answer.
+
+[![asciicast](https://asciinema.org/a/589894.svg)](https://asciinema.org/a/589894)
+
+## brain-gcd
+
+The user is shown two random numbers. The numbers can be any from 1 to 10. The user needs to calculate and enter the greatest common divisor of these numbers.
+
+[![asciicast](https://asciinema.org/a/589959.svg)](https://asciinema.org/a/589959)
+
+## brain-progression
+
+The user is shown a series of numbers forming an arithmetic progression, replacing one of the numbers with two dots. The player needs to determine this number.
+
+[![asciicast](https://asciinema.org/a/589982.svg)](https://asciinema.org/a/589982)
+
+## brain-prime
+
+The user is shown a random number. The number can be any number up to 25. User needs to answer "yes" if given number is prime, otherwise answer "no".
+
+[![asciicast](https://asciinema.org/a/589994.svg)](https://asciinema.org/a/589994)
+
