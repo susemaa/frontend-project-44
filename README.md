@@ -27,7 +27,7 @@ In the beggining, every game asks you to write your name. After you do that, the
 
 The random number (which is up to 100) is outputed. User needs to answer "yes" if the number is even, or "no" if it is odd.
 
-[![Watch the video](https://asciinema.org/a/589895)](https://asciinema.org/a/589895)
+[![asciicast](https://asciinema.org/a/589895.svg)](https://asciinema.org/a/589895)
 
 Also you can see the demonstrantion of any game:
 <ul>
