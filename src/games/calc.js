@@ -1,5 +1,21 @@
 import playGame from '../index.js';
-import { getOperation, getRand } from '../math.js';
+import getRand from '../utils.js';
+
+const getOperation = () => {
+  const operationNum = getRand(3);
+
+  if (operationNum === 0) {
+    return '+';
+  }
+  if (operationNum === 1) {
+    return '-';
+  }
+  if (operationNum === 2) {
+    return '*';
+  }
+
+  return '';
+};
 
 const getExpression = () => {
   const [v1, v2] = [getRand(15), getRand(15)];

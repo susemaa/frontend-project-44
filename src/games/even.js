@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import { getRand } from '../math.js';
+import getRand from '../utils.js';
 
 export default () => {
   const message = 'Answer "yes" if the number is even, otherwise answer "no".';

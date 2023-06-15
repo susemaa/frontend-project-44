@@ -1,5 +1,21 @@
 import playGame from '../index.js';
-import { createProgression } from '../math.js';
+import getRand from '../utils.js';
+
+const createProgression = () => {
+  const progression = [];
+  progression[0] = String(getRand(10));
+  const progressionStep = getRand(10);
+
+  for (let i = 1; i < 10; i += 1) {
+    progression.push(String(Number(progression[i - 1]) + progressionStep));
+  }
+
+  const missedId = getRand(10);
+  const missedValue = progression[missedId];
+  progression[missedId] = '..';
+
+  return [progression, missedValue];
+};
 
 export default () => {
   const message = 'What number is missing in the progression?';

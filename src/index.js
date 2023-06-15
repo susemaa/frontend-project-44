@@ -1,29 +1,16 @@
 import readlineSync from 'readline-sync';
 import getName from './cli.js';
 
-const getAnsw = () => {
-  const answ = readlineSync.question('Your answer: ');
-
-  return answ;
-};
-
-const sayBye = (counter, playerName) => {
-  if (counter === 3) {
-    console.log(`Congratulations, ${playerName}!`);
-  } else {
-    console.log(`Let's try again, ${playerName}!`);
-  }
-};
-
 const playGame = (message, questions, answers) => {
+  const pointsToWin = 3;
   const playerName = getName();
 
   console.log(message);
 
   let i;
-  for (i = 0; i < 3; i += 1) {
+  for (i = 0; i < pointsToWin; i += 1) {
     console.log(questions[i]);
-    const playerAnsw = getAnsw();
+    const playerAnsw = readlineSync.question('Your answer: ');
     if (playerAnsw === answers[i]) {
       console.log('Correct!');
     } else {
@@ -32,7 +19,11 @@ const playGame = (message, questions, answers) => {
     }
   }
 
-  sayBye(i, playerName);
+  if (i === 3) {
+    console.log(`Congratulations, ${playerName}!`);
+  } else {
+    console.log(`Let's try again, ${playerName}!`);
+  }
 };
 
 export default playGame;
