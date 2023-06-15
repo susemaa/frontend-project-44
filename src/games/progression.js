@@ -1,16 +1,16 @@
 import playGame from '../index.js';
-import getRand from '../utils.js';
+import getRandomValue from '../utils.js';
 
 const createProgression = () => {
   const progression = [];
-  progression[0] = String(getRand(10));
-  const progressionStep = getRand(10);
+  progression[0] = String(getRandomValue(10));
+  const progressionStep = getRandomValue(10);
 
   for (let i = 1; i < 10; i += 1) {
     progression.push(String(Number(progression[i - 1]) + progressionStep));
   }
 
-  const missedId = getRand(10);
+  const missedId = getRandomValue(10);
   const missedValue = progression[missedId];
   progression[missedId] = '..';
 

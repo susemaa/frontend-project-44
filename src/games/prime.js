@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRand from '../utils.js';
+import getRandomValue from '../utils.js';
 
 const isPrime = (value) => {
   for (let i = 2, s = Math.sqrt(value); i <= s; i += 1) {
@@ -14,7 +14,7 @@ export default () => {
   const questions = [];
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
-    const questionNum = getRand(25);
+    const questionNum = getRandomValue(25);
     questions[i] = `Question: ${questionNum}`;
     answers[i] = isPrime(questionNum) ? 'yes' : 'no';
   }

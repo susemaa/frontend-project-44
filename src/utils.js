@@ -1,3 +1,3 @@
-const getRand = (maxValue = 100) => Math.floor(Math.random() * maxValue); // < maxValue
+const getRandomValue = (maxValue = 100) => Math.floor(Math.random() * maxValue); // < maxValue
 
-export default getRand;
+export default getRandomValue;

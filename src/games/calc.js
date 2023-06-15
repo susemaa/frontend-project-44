@@ -1,8 +1,8 @@
 import playGame from '../index.js';
-import getRand from '../utils.js';
+import getRandomValue from '../utils.js';
 
 const getOperation = () => {
-  const operationNum = getRand(3);
+  const operationNum = getRandomValue(3);
 
   if (operationNum === 0) {
     return '+';
@@ -18,7 +18,7 @@ const getOperation = () => {
 };
 
 const getExpression = () => {
-  const [v1, v2] = [getRand(15), getRand(15)];
+  const [v1, v2] = [getRandomValue(15), getRandomValue(15)];
   const operation = getOperation();
 
   switch (operation) {
