@@ -29,7 +29,7 @@ const getExpression = () => {
     case '*':
       return [v1, v2, operation, v1 * v2];
     default:
-      return [0, 0, '+', 0];
+      return 'err';
   }
 };
 
@@ -39,6 +39,11 @@ export default () => {
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
     const [v1, v2, operation, questionValue] = getExpression();
+    if (v1 === 'err') {
+      console.log('getExpression err');
+      break;
+    }
+
     questions[i] = `Question: ${v1} ${operation} ${v2}`;
     answers[i] = String(questionValue);
   }
