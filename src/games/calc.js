@@ -1,35 +1,19 @@
 import playGame from '../index.js';
 import getRandomValue from '../utils.js';
 
-const getOperation = () => {
-  const operationNum = getRandomValue(3);
-
-  if (operationNum === 0) {
-    return '+';
-  }
-  if (operationNum === 1) {
-    return '-';
-  }
-  if (operationNum === 2) {
-    return '*';
-  }
-
-  return '';
-};
-
 const getExpression = () => {
   const [v1, v2] = [getRandomValue(15), getRandomValue(15)];
-  const operation = getOperation();
+  const operationNum = getRandomValue(3);
 
-  switch (operation) {
-    case '+':
-      return [v1, v2, operation, v1 + v2];
-    case '-':
-      return [v1, v2, operation, v1 - v2];
-    case '*':
-      return [v1, v2, operation, v1 * v2];
+  switch (operationNum) {
+    case 0:
+      return [v1, v2, '+', v1 + v2];
+    case 1:
+      return [v1, v2, '-', v1 - v2];
+    case 2:
+      return [v1, v2, '*', v1 * v2];
     default:
-      return 'err';
+      throw new Error('Unknown operationNum!');
   }
 };
 
@@ -39,10 +23,6 @@ export default () => {
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
     const [v1, v2, operation, questionValue] = getExpression();
-    if (v1 === 'err') {
-      console.log('getExpression err');
-      break;
-    }
 
     questions[i] = `Question: ${v1} ${operation} ${v2}`;
     answers[i] = String(questionValue);
