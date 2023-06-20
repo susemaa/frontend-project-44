@@ -12,7 +12,7 @@ export default () => {
   const questions = [];
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
-    const [qValue1, qValue2] = [getRandomValue(0, 10) + 1, getRandomValue(0, 10) + 1];
+    const [qValue1, qValue2] = [getRandomValue(1, 10), getRandomValue(1, 10)];
     questions[i] = `Question: ${qValue1} ${qValue2}`;
     answers[i] = String(getGcd(qValue1, qValue2));
   }
