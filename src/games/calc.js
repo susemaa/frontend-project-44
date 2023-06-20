@@ -2,7 +2,7 @@ import playGame from '../index.js';
 import getRandomValue from '../utils.js';
 
 const getExpression = () => {
-  const [v1, v2] = [getRandomValue(15), getRandomValue(15)];
+  const [v1, v2] = [getRandomValue(0, 15), getRandomValue(0, 15)];
   const operationNum = getRandomValue(3);
 
   switch (operationNum) {

@@ -14,7 +14,7 @@ export default () => {
   const questions = [];
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
-    const questionNum = getRandomValue(25);
+    const questionNum = getRandomValue(1, 25);
     questions[i] = `Question: ${questionNum}`;
     answers[i] = isPrime(questionNum) ? 'yes' : 'no';
   }

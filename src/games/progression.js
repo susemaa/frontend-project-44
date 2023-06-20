@@ -3,8 +3,8 @@ import getRandomValue from '../utils.js';
 
 const createProgression = () => {
   const progression = [];
-  progression[0] = String(getRandomValue(10));
-  const progressionStep = getRandomValue(10);
+  progression[0] = String(getRandomValue(1, 10));
+  const progressionStep = getRandomValue(1, 10);
 
   for (let i = 1; i < 10; i += 1) {
     progression.push(String(Number(progression[i - 1]) + progressionStep));
