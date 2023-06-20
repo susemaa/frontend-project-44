@@ -7,11 +7,11 @@ const getExpression = () => {
 
   switch (operationNum) {
     case 0:
-      return [v1, v2, '+', v1 + v2];
+      return [`${v1} + ${v2}`, v1 + v2];
     case 1:
-      return [v1, v2, '-', v1 - v2];
+      return [`${v1} - ${v2}`, v1 - v2];
     case 2:
-      return [v1, v2, '*', v1 * v2];
+      return [`${v1} * ${v2}`, v1 * v2];
     default:
       throw new Error('Unknown operationNum!');
   }
@@ -22,9 +22,9 @@ export default () => {
   const questions = [];
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
-    const [v1, v2, operation, questionValue] = getExpression();
+    const [expression, questionValue] = getExpression();
 
-    questions[i] = `Question: ${v1} ${operation} ${v2}`;
+    questions[i] = `Question: ${expression}`;
     answers[i] = String(questionValue);
   }
 
