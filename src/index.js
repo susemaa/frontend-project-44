@@ -14,15 +14,15 @@ const playGame = (message, questions, answers) => {
 
     if (playerAnsw === answers[i]) {
       console.log('Correct!');
-      if (i === 2) {
-        console.log(`Congratulations, ${playerName}!`);
-      }
     } else {
       console.log(`'${playerAnsw}' is wrong answer ;(. Correct answer was '${answers[i]}'`);
       console.log(`Let's try again, ${playerName}!`);
-      break;
+      return false;
     }
   }
+
+  console.log(`Congratulations, ${playerName}!`);
+  return true;
 };
 
 export default playGame;
