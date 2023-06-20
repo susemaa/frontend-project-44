@@ -10,7 +10,7 @@ const createProgression = () => {
     progression.push(String(Number(progression[i - 1]) + progressionStep));
   }
 
-  const missedId = getRandomValue(10);
+  const missedId = getRandomValue(0, 10);
   const missedValue = progression[missedId];
   progression[missedId] = '..';
 
@@ -25,7 +25,6 @@ export default () => {
     const [progression, corrAnsw] = createProgression();
     const stringedProgression = progression.join(' ');
     questions[i] = `Question: ${stringedProgression}`;
-    console.log(questions[i]);
     answers[i] = corrAnsw;
   }
 
