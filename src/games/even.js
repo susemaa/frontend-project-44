@@ -6,7 +6,7 @@ export default () => {
   const questions = [];
   const answers = [];
   for (let i = 0; i < 3; i += 1) {
-    const questionNum = getRandomValue();
+    const questionNum = getRandomValue(0, 100);
     questions[i] = `Question: ${questionNum}`;
     answers[i] = questionNum % 2 === 0 ? 'yes' : 'no';
   }
