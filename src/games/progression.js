@@ -10,7 +10,7 @@ const createProgression = () => {
     progression.push(String(Number(progression[i - 1]) + progressionStep));
   }
 
-  const missedId = getRandomValue(0, 10);
+  const missedId = getRandomValue(0, 9);
   const missedValue = progression[missedId];
   progression[missedId] = '..';
 
