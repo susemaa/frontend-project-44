@@ -3,7 +3,7 @@ import getRandomValue from '../utils.js';
 
 const getExpression = () => {
   const [v1, v2] = [getRandomValue(0, 15), getRandomValue(0, 15)];
-  const operationNum = getRandomValue(3);
+  const operationNum = getRandomValue(0, 2);
 
   switch (operationNum) {
     case 0:
