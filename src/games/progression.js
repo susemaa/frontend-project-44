@@ -19,14 +19,14 @@ const createProgression = () => {
 
 export default () => {
   const message = 'What number is missing in the progression?';
-  const questions = [];
-  const answers = [];
-  for (let i = 0; i < 3; i += 1) {
-    const [progression, corrAnsw] = createProgression();
-    const stringedProgression = progression.join(' ');
-    questions[i] = `Question: ${stringedProgression}`;
-    answers[i] = corrAnsw;
-  }
 
-  playGame(message, questions, answers);
+  const getQnA = () => {
+    const [progression, answer] = createProgression();
+    const stringedProgression = progression.join(' ');
+    const question = `Question: ${stringedProgression}`;
+
+    return [question, answer];
+  };
+
+  playGame(message, getQnA);
 };

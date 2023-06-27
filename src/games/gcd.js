@@ -9,13 +9,14 @@ const getGcd = (x, y) => {
 
 export default () => {
   const message = 'Find the greatest common divisor of given numbers.';
-  const questions = [];
-  const answers = [];
-  for (let i = 0; i < 3; i += 1) {
-    const [qValue1, qValue2] = [getRandomValue(1, 10), getRandomValue(1, 10)];
-    questions[i] = `Question: ${qValue1} ${qValue2}`;
-    answers[i] = String(getGcd(qValue1, qValue2));
-  }
 
-  playGame(message, questions, answers);
+  const getQnA = () => {
+    const [qValue1, qValue2] = [getRandomValue(1, 10), getRandomValue(1, 10)];
+    const question = `Question: ${qValue1} ${qValue2}`;
+    const answer = String(getGcd(qValue1, qValue2));
+
+    return [question, answer];
+  };
+
+  playGame(message, getQnA);
 };
