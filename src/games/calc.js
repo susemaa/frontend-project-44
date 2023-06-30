@@ -1,19 +1,5 @@
 import playGame from '../index.js';
-import getRandomValue from '../utils.js';
-
-const getRandomOperator = () => {
-  const operatorNum = getRandomValue(0, 2);
-  switch (operatorNum) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    case 2:
-      return '*';
-    default:
-      throw new Error('Unknown operationNum!');
-  }
-};
+import getRandomNumber from '../utils.js';
 
 const getCorrectAnswer = (number1, number2, operator) => {
   switch (operator) {
@@ -32,9 +18,11 @@ const playCalc = () => {
   const message = 'What is the result of the expression?';
 
   const getQnA = () => {
-    const randomNumber1 = getRandomValue(1, 30);
-    const randomNumber2 = getRandomValue(1, 30);
-    const randomOperator = getRandomOperator();
+    const randomNumber1 = getRandomNumber(1, 30);
+    const randomNumber2 = getRandomNumber(1, 30);
+    const operators = '+-*';
+    const indexOperator = getRandomNumber(0, operators.length - 1);
+    const randomOperator = operators[indexOperator];
     const question = `Question: ${randomNumber1} ${randomOperator} ${randomNumber2}`;
     const answer = String(getCorrectAnswer(randomNumber1, randomNumber2, randomOperator));
 
