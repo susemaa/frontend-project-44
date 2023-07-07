@@ -14,7 +14,7 @@ Brain Games is a collection of five command-line interface (CLI) brain games des
 </ul>
 
 ## Setup
-`make setup`
+`make install`
 
 ## Usage
 To open any of games you need to write 
